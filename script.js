@@ -1,9 +1,8 @@
 let map;
 let marker;
 if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(() => {
-         initMap(position)
-     }, logError);
+
+    navigator.geolocation.getCurrentPosition(position=>initMap(position), logError);
 } else {
     logError();
 }
@@ -18,7 +17,11 @@ function initMap(position) {
         center: { lat: latitude, lng: longitude },
         zoom: 14
     })
-        
+//       const map = new google.maps.Map(document.getElementById("map"), {
+//   center: { lat: -34.397, lng: 150.644 },
+//   zoom: 8,
+// });
+  
     
        
        
